@@ -1,0 +1,16 @@
+rules:
+  - source: a
+    illegal_destinations:
+      - fmt
+      - math/rand
+      - net/*
+  - source: a/b
+    illegal_destinations:
+      - log
+      - math/rand
+      - net/*
+  - source: "**/c/**/*"
+    illegal_destinations:
+      - log
+      - math/rand
+      - net/*
