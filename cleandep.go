@@ -1,10 +1,8 @@
 package cleandep
 
 import (
-	"os"
 	"strconv"
 
-	"github.com/goccy/go-yaml"
 	"github.com/mattn/go-zglob"
 	"golang.org/x/tools/go/analysis"
 )
@@ -16,20 +14,6 @@ var Analyzer = &analysis.Analyzer{
 	Doc:      doc,
 	Run:      run,
 	Requires: []*analysis.Analyzer{},
-}
-
-func decodeConfig(filename string) (Config, error) {
-	f, err := os.Open(filename)
-	if err != nil {
-		return Config{}, err
-	}
-
-	var cfg Config
-	if err := yaml.NewDecoder(f).Decode(&cfg); err != nil {
-		return Config{}, err
-	}
-
-	return cfg, nil
 }
 
 func run(pass *analysis.Pass) (interface{}, error) {
