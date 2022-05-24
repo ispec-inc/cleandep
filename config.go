@@ -20,6 +20,7 @@ func decodeConfig(filename string) (Config, error) {
 	if err != nil {
 		return Config{}, err
 	}
+	defer f.Close()
 
 	var cfg Config
 	if err := yaml.NewDecoder(f).Decode(&cfg); err != nil {
