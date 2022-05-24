@@ -1,16 +1,16 @@
 rules:
   - source: a
-    illegal_destinations:
+    illegal_dependencies:
       - fmt
       - math/rand
       - net/*
   - source: a/b
-    illegal_destinations:
+    illegal_dependencies:
       - log
       - math/rand
       - net/*
   - source: "**/c/**/*"
-    illegal_destinations:
+    illegal_dependencies:
       - log
       - math/rand
       - net/*

@@ -6,5 +6,5 @@ type Config struct {
 
 type Rule struct {
 	Source              string   `yaml:"source"`
-	IllegalDestinations []string `yaml:"illegal_destinations"`
+	IllegalDependencies []string `yaml:"illegal_dependencies"`
 }
