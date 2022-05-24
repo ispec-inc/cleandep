@@ -24,7 +24,7 @@ func run(pass *analysis.Pass) (interface{}, error) {
 
 	rules := make(map[string][]string, len(cfg.Rules))
 	for _, rule := range cfg.Rules {
-		rules[rule.Source] = rule.IllegalDependencies
+		rules[rule.Package] = rule.IllegalDependencies
 	}
 
 	src := pass.Pkg.Path()

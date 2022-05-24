@@ -11,7 +11,7 @@ type Config struct {
 }
 
 type Rule struct {
-	Source              string   `yaml:"source"`
+	Package             string   `yaml:"package"`
 	IllegalDependencies []string `yaml:"illegal_dependencies"`
 }
 

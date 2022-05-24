@@ -1,15 +1,15 @@
 rules:
-  - source: a
+  - package: a
     illegal_dependencies:
       - fmt
       - math/rand
       - net/*
-  - source: a/b
+  - package: a/b
     illegal_dependencies:
       - log
       - math/rand
       - net/*
-  - source: "**/c/**/*"
+  - package: "**/c/**/*"
     illegal_dependencies:
       - log
       - math/rand
