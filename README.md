@@ -13,6 +13,28 @@ go install github.com/ispec-inc/cleandep/cmd/cleandep@latest
 
 ## Usage
 
+### Local
+
 ```shell
 cleandep ./...
+```
+
+### GitHub Actions
+
+```yaml
+name: cleandep
+
+on:
+  pull_request:
+
+jobs:
+  cleandep:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        dir: [go/foo, go/bar, go/baz]
+    steps:
+      - uses: actions/checkout@v3
+      - run: go run github.com/ispec-inc/cleandep/cmd/cleandep@latest ./...
+        working-directory: ${{ matrix.dir }}
 ```
