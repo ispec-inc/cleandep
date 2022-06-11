@@ -6,12 +6,12 @@ import (
 	"math/big"
 	mathrand "math/rand" // want "package 'a' cannot depend on package 'math/rand'"
 	"net/http"           // want "package 'a' cannot depend on package 'net/http'"
-	"net/netip"          // want "package 'a' cannot depend on package 'net/netip'"
+	"net/rpc"            // want "package 'a' cannot depend on package 'net/rpc'"
 )
 
 func f() {
 	fmt.Println(mathrand.Int())
 	fmt.Println(rand.Int(rand.Reader, big.NewInt(100)))
 	var _ = http.DefaultClient
-	var _ = netip.Addr{}
+	var _ = rpc.Client{}
 }
