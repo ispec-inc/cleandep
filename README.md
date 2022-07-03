@@ -13,6 +13,27 @@ go install github.com/ispec-inc/cleandep/cmd/cleandep@latest
 
 ## Usage
 
+### `.cleandep.yaml` example
+
+```yaml
+rules:
+  - package: a
+    illegal_dependencies:
+      - fmt
+      - math/rand
+      - net/*
+  - package: a/b
+    illegal_dependencies:
+      - log
+      - math/rand
+      - net/*
+  - package: "**/c/**/*"
+    illegal_dependencies:
+      - log
+      - math/rand
+      - net/*
+```
+
 ### Local
 
 ```shell
